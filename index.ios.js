@@ -6,50 +6,50 @@
 
 import React, { Component } from 'react';
 import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
+    AppRegistry,
+    StyleSheet,
+    Text,
+    View,
+    Dimensions
 } from 'react-native';
-import Test from './js/Test.jsx';
+import MapView from 'react-native-maps';
+import Test from './js/Test';
+
+const { width, height } = Dimensions.get('window');
 
 export default class rnstarterkit extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-        <Test></Test>
-      </View>
-    );
-  }
+    render() {
+        return (
+            <View style={styles.container}>
+                <Text>HELLO</Text>
+                <MapView style={styles.map}
+                         initialRegion={{
+      latitude: 37.78825,
+      longitude: -122.4324,
+      latitudeDelta: 0.0922,
+      longitudeDelta: 0.0421,
+    }}
+                />
+            </View>
+        );
+    }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#F5FCFF',
+    },
+    map: {
+        position: 'relative',
+        display: "flex",
+        top: 0,
+        left: 0,
+        width: width,
+        height: height / 10 * 9
+    }
 });
 
 AppRegistry.registerComponent('rnstarterkit', () => rnstarterkit);
