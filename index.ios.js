@@ -11,6 +11,7 @@ import {
   Text,
   View
 } from 'react-native';
+import Test from './js/Test.jsx';
 
 export default class rnstarterkit extends Component {
   render() {
@@ -26,6 +27,7 @@ export default class rnstarterkit extends Component {
           Press Cmd+R to reload,{'\n'}
           Cmd+D or shake for dev menu
         </Text>
+        <Test></Test>
       </View>
     );
   }
