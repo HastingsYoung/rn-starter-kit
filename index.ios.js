@@ -13,7 +13,7 @@ import {
     Dimensions
 } from 'react-native';
 import MapView from 'react-native-maps';
-import Test from './js/Test';
+import NavBar from './js/components/NavBar';
 
 const { width, height } = Dimensions.get('window');
 
@@ -21,7 +21,7 @@ export default class rnstarterkit extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text>HELLO</Text>
+                <NavBar></NavBar>
                 <MapView style={styles.map}
                          initialRegion={{
       latitude: 37.78825,
@@ -37,6 +37,7 @@ export default class rnstarterkit extends Component {
 
 const styles = StyleSheet.create({
     container: {
+        paddingTop: 20,
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',

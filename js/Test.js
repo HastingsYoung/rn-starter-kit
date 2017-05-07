@@ -1,5 +1,4 @@
-
-import React, { Component } from 'react';
+import React ,{ Component } from 'react';
 import {
     AppRegistry,
     StyleSheet,
@@ -8,11 +7,11 @@ import {
 } from 'react-native';
 
 export default class Test extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
     }
 
-    render(){
+    render() {
         return <Text>
             TEST
         </Text>
