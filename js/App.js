@@ -15,7 +15,9 @@ import NavBar from './components/NavBar';
 import SubMenu from './components/SubMenu';
 import HomeView from './containers/HomeView';
 import SubscriptionView from './containers/SubscriptionView';
-import ExtendedMapView from './containers/ExtendedMapView';
+import LiveStreamView from './containers/LiveStreamView';
+import NoteView from './containers/NoteView';
+//import ExtendedMapView from './containers/ExtendedMapView';
 import {APP_PADDING_TOP,VIEW_FLEX} from './constants/layouts';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
 const { width, height } = Dimensions.get('window');
@@ -37,14 +39,14 @@ export default class App extends Component {
         return <View>
             <NavBar></NavBar>
             <ScrollableTabView
-                style={{marginTop: 5, }}
+                style={styles.tab}
                 renderTabBar={() => <SubMenu selected={this.state.selected} onSelect={this._onSelect.bind(this)}></SubMenu>}
                 ref={(tabView) => { this.tabView = tabView; }}
             >
-                <Text tabLabel='Tab #1'>文章</Text>
-                <Text tabLabel='Tab #2'>订阅</Text>
-                <Text tabLabel='Tab #3'>直播</Text>
-                <Text tabLabel='Tab #4'>笔记</Text>
+                <HomeView tabLabel="Tab #1" tabView={this.tabView}></HomeView>
+                <SubscriptionView tabLabel="Tab #2" tabView={this.tabView}></SubscriptionView>
+                <LiveStreamView tabLabel="Tab #3" tabView={this.tabView}></LiveStreamView>
+                <NoteView tabLabel="Tab #4" tabView={this.tabView}></NoteView>
             </ScrollableTabView>
         </View>;
     }
@@ -58,6 +60,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         width: width,
         height: height - APP_PADDING_TOP
+    },
+    tab: {
+        height: height - APP_PADDING_TOP - height / 20 * 3
     }
 });
 

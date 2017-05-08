@@ -33,10 +33,12 @@ export default class SubMenu extends Component {
     render() {
         return <View style={styles.component}>
             <ScrollView contentContainerStyle={styles.scroll}>
-                <Tab active={this.props.selected==0} content={"文章"} onPress={this._onTabPress.bind(this,0)}></Tab>
-                <Tab active={this.props.selected==1} content={"订阅"} onPress={this._onTabPress.bind(this,1)}></Tab>
-                <Tab active={this.props.selected==2} content={"直播"} onPress={this._onTabPress.bind(this,2)}></Tab>
-                <Tab active={this.props.selected==3} content={"笔记"} onPress={this._onTabPress.bind(this,3)}></Tab>
+                <Tab active={this.props.selected==0} content={"Articles"} onPress={this._onTabPress.bind(this,0)}></Tab>
+                <Tab active={this.props.selected==1} content={"Subscription"}
+                     onPress={this._onTabPress.bind(this,1)}></Tab>
+                <Tab active={this.props.selected==2} content={"LiveStream"}
+                     onPress={this._onTabPress.bind(this,2)}></Tab>
+                <Tab active={this.props.selected==3} content={"Notes"} onPress={this._onTabPress.bind(this,3)}></Tab>
             </ScrollView>
         </View>;
     }
@@ -55,7 +57,7 @@ class Tab extends Component {
 
     render() {
         return <TouchableOpacity style={this.props.active?styles.tabactive:styles.tab} onPress={this.props.onPress}>
-            <Text>{this.props.content}</Text>
+            <Text style={styles.tabText}>{this.props.content}</Text>
         </TouchableOpacity>;
     }
 }
@@ -89,5 +91,8 @@ const styles = StyleSheet.create({
         padding: 5,
         borderBottomWidth: 3,
         borderColor: "#795548"
+    },
+    tabText: {
+        fontFamily: "Architects Daughter"
     }
 });

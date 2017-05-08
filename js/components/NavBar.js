@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
-        height: height / 10 - 20,
+        height: height / 10,
         color: "#ffffff",
         textAlign: "center"
     },

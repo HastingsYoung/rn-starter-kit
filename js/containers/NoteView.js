@@ -1,5 +1,5 @@
 /**
- * Created by hastings on 8/05/2017.
+ * Created by hastings on 9/05/2017.
  */
 import React,{ Component,PropTypes } from 'react';
 import {
@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 const { width, height } = Dimensions.get('window');
 
-export default class HomeView extends Component {
+export default class NoteView extends Component {
     constructor(props) {
         super(props);
     }
@@ -24,7 +24,8 @@ export default class HomeView extends Component {
     render() {
 
         return <View style={styles.container} tabLabel={this.props.tabLabel}>
-            <Text>Home</Text>
+            <Text>Note</Text>
+            <Button title="BACK" onPress={() => this.props.tabView.goToPage(0) }/>
         </View>;
     }
 }
