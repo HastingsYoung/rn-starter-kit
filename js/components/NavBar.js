@@ -1,6 +1,5 @@
 import React,{ Component,PropTypes } from 'react';
 import {
-    AppRegistry,
     StyleSheet,
     Text,
     View,
@@ -29,6 +28,9 @@ export default class NavBar extends Component {
     }
 
     render() {
+        // TouchableHighlight must have one child (not zero or more than one).
+        // If you wish to have several child components, wrap them in a View.
+
         return <View style={styles.component}>
             <TouchableOpacity style={styles.menubtn}>
                 <Icon name={"menu"} size={30} color={"#ffffff"}></Icon>
@@ -43,13 +45,12 @@ export default class NavBar extends Component {
                 {this.state.isSearching ? <Icon name={"arrow-back"} size={30} color={"#ffffff"}></Icon> :
                     <Icon name={"search"} size={30} color={"#ffffff"}></Icon>}
             </TouchableOpacity>
-        </View>
+        </View>;
     }
 }
 
 const styles = StyleSheet.create({
     component: {
-        flex: 1,
         justifyContent: "space-around",
         alignItems: "center",
         flexDirection: "row",
