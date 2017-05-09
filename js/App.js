@@ -17,6 +17,7 @@ import HomeView from './containers/HomeView';
 import SubscriptionView from './containers/SubscriptionView';
 import LiveStreamView from './containers/LiveStreamView';
 import NoteView from './containers/NoteView';
+import StatisticsView from './containers/StatisticsView';
 import Drawer from 'react-native-drawer';
 import ControlPanel from './components/ControlPanel';
 //import ExtendedMapView from './containers/ExtendedMapView';
@@ -83,6 +84,7 @@ export default class App extends Component {
                     <SubscriptionView tabLabel="Tab #2" tabView={this.tabView}></SubscriptionView>
                     <LiveStreamView tabLabel="Tab #3" tabView={this.tabView}></LiveStreamView>
                     <NoteView tabLabel="Tab #4" tabView={this.tabView}></NoteView>
+                    <StatisticsView tabLabel="Tab #5" tabView={this.tabView}></StatisticsView>
                 </ScrollableTabView>
             </Drawer>
             {/*<ScrollableTabView

@@ -32,13 +32,15 @@ export default class SubMenu extends Component {
 
     render() {
         return <View style={styles.component}>
-            <ScrollView contentContainerStyle={styles.scroll}>
+            <ScrollView contentContainerStyle={styles.scroll} horizontal={true}>
                 <Tab active={this.props.selected==0} content={"Articles"} onPress={this._onTabPress.bind(this,0)}></Tab>
                 <Tab active={this.props.selected==1} content={"Subscription"}
                      onPress={this._onTabPress.bind(this,1)}></Tab>
                 <Tab active={this.props.selected==2} content={"LiveStream"}
                      onPress={this._onTabPress.bind(this,2)}></Tab>
                 <Tab active={this.props.selected==3} content={"Notes"} onPress={this._onTabPress.bind(this,3)}></Tab>
+                <Tab active={this.props.selected==4} content={"Footprint"}
+                     onPress={this._onTabPress.bind(this,4)}></Tab>
             </ScrollView>
         </View>;
     }
@@ -68,11 +70,9 @@ const styles = StyleSheet.create({
         height: height / 20
     },
     scroll: {
-        flex: 1,
-        flexDirection: "row",
         alignItems: "center",
         justifyContent: "flex-start",
-        width: width,
+        overflow: "hidden",
         paddingHorizontal: 10,
         backgroundColor: "#ffffff"
     },
