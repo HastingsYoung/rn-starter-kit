@@ -26,7 +26,6 @@ export default class rnstarterkit extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        paddingTop: APP_PADDING_TOP,
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',

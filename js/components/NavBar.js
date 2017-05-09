@@ -8,6 +8,7 @@ import {
     TextInput
 } from 'react-native';
 
+import {APP_PADDING_TOP,VIEW_FLEX} from '../constants/layouts';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const { width, height } = Dimensions.get('window');
@@ -21,7 +22,9 @@ export default class NavBar extends Component {
         };
     }
 
-    static propTypes = {};
+    static propTypes = {
+        onMenuPress: PropTypes.func
+    };
 
     _onToggleSearch() {
         this.setState({isSearching: !this.state.isSearching});
@@ -32,7 +35,7 @@ export default class NavBar extends Component {
         // If you wish to have several child components, wrap them in a View.
 
         return <View style={styles.component}>
-            <TouchableOpacity style={styles.menubtn}>
+            <TouchableOpacity style={styles.menubtn} onPress={this.props.onMenuPress}>
                 <Icon name={"menu"} size={30} color={"#ffffff"}></Icon>
             </TouchableOpacity>
             {this.state.isSearching ? <TextInput
@@ -54,15 +57,16 @@ const styles = StyleSheet.create({
         justifyContent: "space-around",
         alignItems: "center",
         flexDirection: "row",
-        backgroundColor: '#5d4037',
-        height: height / 10
+        backgroundColor: '#3f51b5',
+        height: height / 10,
+        paddingTop: APP_PADDING_TOP
     },
     searchinput: {
         flex: 3,
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
-        height: height / 10,
+        height: height / 10 - APP_PADDING_TOP,
         color: "#ffffff",
         textAlign: "center"
     },
@@ -79,7 +83,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         fontSize: 24,
-        lineHeight: height / 10 - 20,
+        lineHeight: height / 10,
         textAlign: "center",
         color: "#ffffff",
         letterSpacing: 2,

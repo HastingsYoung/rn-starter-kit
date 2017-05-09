@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 5,
         padding: 5,
         borderBottomWidth: 3,
-        borderColor: "#795548"
+        borderColor: "#7986cb"
     },
     tabText: {
         fontFamily: "Architects Daughter"
