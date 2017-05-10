@@ -12,6 +12,8 @@ import {
     ScrollView,
     TouchableOpacity
 } from 'react-native';
+import {APP_DISTANCE_TOP} from '../constants/layouts';
+import {arc,scaleArc,colors20} from '../utils/graphutils';
 
 var ReactART = require('ReactNativeART');
 
@@ -35,13 +37,22 @@ export default class StatisticsView extends Component {
     }
 
     render() {
+        let graphData = scaleArc([0, 20, 40, 60], 1.5 * Math.PI, 15);
+        let a = arc(graphData.startAngle, graphData.endAngle, graphData.inner, graphData.outer);
+
+        let s = [];
+
+        a.forEach((d, i)=> {
+            s.push(<Shape key={i}
+                          d={a[i]}
+                          fill={i>=20?colors20[i-20]:colors20[i]}
+                          strokeWidth={1}/>);
+        });
+
         return <View style={styles.container} tabLabel={this.props.tabLabel}>
-            <Surface width={500} height={500}>
-                <Group x={100} y={0}>
-                    <Shape
-                        d="M10 80 C 40 10, 65 10, 95 80 S 150 150, 180 80"
-                        stroke="#3f51b5"
-                        strokeWidth={3}/>
+            <Surface width={width} height={height}>
+                <Group x={width/2} y={height/2 - APP_DISTANCE_TOP}>
+                    {s}
                 </Group>
             </Surface>
         </View>
@@ -49,7 +60,5 @@ export default class StatisticsView extends Component {
 }
 
 const styles = StyleSheet.create({
-    container: {
-
-    }
+    container: {}
 });
