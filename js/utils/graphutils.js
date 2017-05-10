@@ -2,16 +2,6 @@
  * Created by hastings on 10/05/2017.
  */
 var d3 = require("d3");
-const gdp = [
-    {'country': 'Germany', 'color': '#2ca02c', 'value': 3},
-    {'country': 'Japan', 'color': '#9467bd', 'value': 5},
-    {'country': 'China', 'color': '#d62728', 'value': 9},
-    {'country': 'USA', 'color': '#1f77b4', 'value': 17},
-];
-
-var max_val = d3.max(gdp, (o)=>(o.value));
-var angle_scale = d3.scaleLinear().domain([0, max_val]).range([0, 1.5 * Math.PI]);
-
 export const arc = (stAgArray, edAgArray, iArray, oArray)=> {
     if (iArray.length && oArray.length && stAgArray.length && edAgArray.length) {
         const length = Math.min(Math.min(iArray.length, oArray.length), Math.min(stAgArray.length, edAgArray.length));
