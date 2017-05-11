@@ -60,13 +60,41 @@ export const scalePie = (data, stAg = -0.5 * Math.PI, edAg = 0.5 * Math.PI, pad 
     return d3.pie().startAngle(stAg).endAngle(edAg).padAngle(pad).sort(sort).value(val)(data);
 };
 
-export const pie = (arr, iRadius = 20, oRadius = 100, base = 5)=>{
-    if (typeof arr != "object" || !arr.length){
+export const pie = (arr, iRadius = 20, oRadius = 100, base = 5)=> {
+    if (typeof arr != "object" || !arr.length) {
         throw new Error("Missing Arguments in pie() Error!");
     }
-    arr.forEach((d,i)=>{
+    arr.forEach((d, i)=> {
         d.inner = iRadius;
         d.outer = oRadius;
     });
     return arc(arr);
 };
+
+export const rect = (start, end, round = 0)=> {
+    let path = d3.path();
+    if ((start.x || start.x === 0) && (start.y || start.y === 0) && (end.x || end.x === 0) && (end.y || end.y === 0)) {
+        if (!round){
+            path.moveTo(start.x, start.y);
+            path.lineTo(end.x , start.y);
+            path.lineTo(end.x, end.y);
+            path.lineTo(start.x, end.y);
+            path.lineTo(start.x, start.y);
+        }
+        else {
+            path.moveTo(start.x + round, start.y);
+            path.lineTo(end.x - round, start.y);
+            path.arc(end.x - round, start.y + round, round, -0.5 * Math.PI, 0);
+            path.lineTo(end.x, end.y - round);
+            path.arc(end.x - round, end.y - round, round, 0, 0.5 * Math.PI);
+            path.lineTo(start.x + round, end.y);
+            path.arc(start.x + round, end.y - round, round, 0.5 * Math.PI, Math.PI);
+            path.lineTo(start.x, start.y + round);
+            path.arc(start.x + round, start.y + round, round, Math.PI, 1.5 * Math.PI);
+        }
+        path.closePath();
+        return path.toString();
+    } else {
+        throw new Error("Arguments of rect() is malformed Error!");
+    }
+}

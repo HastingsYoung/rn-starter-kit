@@ -13,7 +13,7 @@ import {
     TouchableOpacity
 } from 'react-native';
 import {APP_DISTANCE_TOP} from '../constants/layouts';
-import {arc,scaleArc,pie, scalePie, colors20} from '../utils/graphutils';
+import {arc, scaleArc, pie, scalePie, rect, colors20} from '../utils/graphutils';
 
 var ReactART = require('ReactNativeART');
 
@@ -39,7 +39,7 @@ export default class StatisticsView extends Component {
 
     render() {
         let original = [0, 20, 40, 50, 55, 60, 75];
-        const gap = 15;
+        const gap = 10;
         let arcData = scaleArc(original, 1.5 * Math.PI, gap);
         let a = arc(arcData);
 
@@ -59,14 +59,14 @@ export default class StatisticsView extends Component {
 				    }}
                             fill={i>=20?colors20[i-20]:colors20[i]}
                             x={-75}
-                            y={(original.length - i) * gap - 150}
+                            y={(original.length - i) * gap - 100}
                             alignment="center">
-                {"Values :" + original[i]}
+                {"Day" + (i + 1) + " :" + original[i]}
             </ARTText>);
         });
 
         let pieData = scalePie(original, 0, 2 * Math.PI, 0);
-        let p = pie(pieData);
+        let p = pie(pieData, 10, 80);
 
         let ns = [];
         let nt = [];
@@ -86,7 +86,7 @@ export default class StatisticsView extends Component {
                              x={-75}
                              y={(original.length - i) * gap - 150}
                              alignment="center">
-                {"Values :" + original[i]}
+                {"Day" + (i + 1) + " :" + original[i]}
             </ARTText>);
         });
 
@@ -96,15 +96,49 @@ export default class StatisticsView extends Component {
                     {s}
                     {t}
                 </Group>
-                <Group x={width/2} y={450}>
+                <Group x={width/2} y={400}>
                     {ns}
                     {nt}
                 </Group>
+                <Group x={width/2} y={450}>
+                    <Shape
+                        d={rect({x:-175,y:60},{x:width - 15 - 190,y:120}, 15)}
+                        fill={"#ffffff"}
+                        strokeWidth={1}/>
+                    <ARTText fill={"#000000"} width={width * 0.8} height={60} font={{fontFamily:'Helvetica, Neue Helvetica, Arial',
+                        fontSize:15,
+                        fontWeight:"800",
+                        fontFamily:'Architects Daughter',
+				    }} alignment="center" x={0} y={80}>
+                        Effort you put in over the past 7 days
+                    </ARTText>
+                </Group>
             </Surface>
+            <View style={styles.captionBoard}>
+                <Text style={styles.caption}>
+                </Text>
+            </View>
         </View>
     }
 }
 
 const styles = StyleSheet.create({
-    container: {}
+    container: {
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center"
+    },
+    captionBoard: {
+        height: 60,
+        width: width * 0.75,
+        paddingVertical: 10,
+        paddingHorizontal: 10,
+        backgroundColor: "#ffffff",
+        borderRadius: 5,
+        borderColor: "#304ffe"
+    },
+    caption: {
+        fontSize: 15,
+        fontWeight: "200"
+    }
 });
