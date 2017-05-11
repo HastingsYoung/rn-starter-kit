@@ -32,7 +32,7 @@ export default class SubMenu extends Component {
 
     render() {
         return <View style={styles.component}>
-            <ScrollView contentContainerStyle={styles.scroll} horizontal={true}>
+            <ScrollView contentContainerStyle={styles.scroll} horizontal={true} showsHorizontalScrollIndicator={false}>
                 <Tab active={this.props.selected==0} content={"Articles"} onPress={this._onTabPress.bind(this,0)}></Tab>
                 <Tab active={this.props.selected==1} content={"Subscription"}
                      onPress={this._onTabPress.bind(this,1)}></Tab>
