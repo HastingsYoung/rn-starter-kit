@@ -51,6 +51,10 @@
 		A842DF8808F240A083EC01CB /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF6DAF9A19574BCB9E9ED75D /* Ionicons.ttf */; };
 		DA44E95EA1AC41B5A424E516 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 34AD2E2080EE4F57B11358B2 /* EvilIcons.ttf */; };
 		619CDC3CFE334014A4F15817 /* libRCTVideo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBB9EE77D004CD6B575914D /* libRCTVideo.a */; };
+		67302B22950A486786D9C4DC /* Arimo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2EF76B03AF754F88B010AF1F /* Arimo-Bold.ttf */; };
+		60BAB9ADEFBF43ACACE2456A /* Arimo-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6DDCDA5326F144AD8B179E51 /* Arimo-BoldItalic.ttf */; };
+		45381B67F1C2470095BC1FA8 /* Arimo-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B20D890D28B4FEC958B1307 /* Arimo-Italic.ttf */; };
+		E455D2FE891941E2A5E73A85 /* Arimo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A334A8207CE545C7B5745749 /* Arimo-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -310,6 +314,10 @@
 		F521163D8B2D456B87C4FDB3 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
 		CCFEC004CE864B568F77E97B /* RCTVideo.xcodeproj */ = {isa = PBXFileReference; name = "RCTVideo.xcodeproj"; path = "../node_modules/react-native-video/ios/RCTVideo.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		1DBB9EE77D004CD6B575914D /* libRCTVideo.a */ = {isa = PBXFileReference; name = "libRCTVideo.a"; path = "libRCTVideo.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		2EF76B03AF754F88B010AF1F /* Arimo-Bold.ttf */ = {isa = PBXFileReference; name = "Arimo-Bold.ttf"; path = "../assets/fonts/Arimo-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6DDCDA5326F144AD8B179E51 /* Arimo-BoldItalic.ttf */ = {isa = PBXFileReference; name = "Arimo-BoldItalic.ttf"; path = "../assets/fonts/Arimo-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5B20D890D28B4FEC958B1307 /* Arimo-Italic.ttf */ = {isa = PBXFileReference; name = "Arimo-Italic.ttf"; path = "../assets/fonts/Arimo-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A334A8207CE545C7B5745749 /* Arimo-Regular.ttf */ = {isa = PBXFileReference; name = "Arimo-Regular.ttf"; path = "../assets/fonts/Arimo-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -586,6 +594,10 @@
 				14539BC0092247CB8B628E12 /* Zocial.ttf */,
 				1FB6BC9501BF4C3282239DDE /* ArchitectsDaughter.ttf */,
 				8AF2E0A749ED46999FD2870F /* OFL.txt */,
+				2EF76B03AF754F88B010AF1F /* Arimo-Bold.ttf */,
+				6DDCDA5326F144AD8B179E51 /* Arimo-BoldItalic.ttf */,
+				5B20D890D28B4FEC958B1307 /* Arimo-Italic.ttf */,
+				A334A8207CE545C7B5745749 /* Arimo-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -993,6 +1005,10 @@
 				1C3D5BCB55214451A27595A3 /* Zocial.ttf in Resources */,
 				8010A24E551746BD8BD5B5F4 /* ArchitectsDaughter.ttf in Resources */,
 				88C4062E4B2E4E44A629A180 /* OFL.txt in Resources */,
+				67302B22950A486786D9C4DC /* Arimo-Bold.ttf in Resources */,
+				60BAB9ADEFBF43ACACE2456A /* Arimo-BoldItalic.ttf in Resources */,
+				45381B67F1C2470095BC1FA8 /* Arimo-Italic.ttf in Resources */,
+				E455D2FE891941E2A5E73A85 /* Arimo-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

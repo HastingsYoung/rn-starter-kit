@@ -35,20 +35,20 @@ export default class NoteView extends Component {
                 <Segment title={"XXXXXXX"} date={new Date().toDateString()} status={"Review"}></Segment>
                 <View style={styles.divider}></View>
                 <Segment title={"XXXXXXX"} date={new Date().toDateString()} status={"Review"}></Segment>
-                <View style={styles.divider}></View>
-                <Segment title={"XXXXXXX"} date={new Date().toDateString()} status={"Correct"}></Segment>
-                <View style={styles.divider}></View>
-                <Segment title={"XXXXXXX"} date={new Date().toDateString()} status={"Correct"}></Segment>
-                <View style={styles.divider}></View>
-                <Segment title={"XXXXXXX"} date={new Date().toDateString()} status={"Correct"}></Segment>
-                <View style={styles.divider}></View>
-                <Segment title={"XXXXXXX"} date={new Date().toDateString()} status={"Review"}></Segment>
-                <View style={styles.divider}></View>
-                <Segment title={"XXXXXXX"} date={new Date().toDateString()} status={"Correct"}></Segment>
-                <View style={styles.divider}></View>
-                <Segment title={"XXXXXXX"} date={new Date().toDateString()} status={"Correct"}></Segment>
-                <View style={styles.divider}></View>
-                <Segment title={"XXXXXXX"} date={new Date().toDateString()} status={"Correct"}></Segment>
+                {/*<View style={styles.divider}></View>
+                 <Segment title={"XXXXXXX"} date={new Date().toDateString()} status={"Correct"}></Segment>
+                 <View style={styles.divider}></View>
+                 <Segment title={"XXXXXXX"} date={new Date().toDateString()} status={"Correct"}></Segment>
+                 <View style={styles.divider}></View>
+                 <Segment title={"XXXXXXX"} date={new Date().toDateString()} status={"Correct"}></Segment>
+                 <View style={styles.divider}></View>
+                 <Segment title={"XXXXXXX"} date={new Date().toDateString()} status={"Review"}></Segment>
+                 <View style={styles.divider}></View>
+                 <Segment title={"XXXXXXX"} date={new Date().toDateString()} status={"Correct"}></Segment>
+                 <View style={styles.divider}></View>
+                 <Segment title={"XXXXXXX"} date={new Date().toDateString()} status={"Correct"}></Segment>
+                 <View style={styles.divider}></View>
+                 <Segment title={"XXXXXXX"} date={new Date().toDateString()} status={"Correct"}></Segment>*/}
             </ScrollView>
         </View>;
     }
@@ -87,8 +87,8 @@ class Segment extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        flexDirection: "row",
-        justifyContent: 'center',
+        flexDirection: "column",
+        justifyContent: 'flex-start',
         alignItems: 'center',
         height: height - APP_PADDING_TOP - height / 20 * 3,
         backgroundColor: "#fff" // make sure no white line in lines
@@ -144,7 +144,8 @@ const styles = StyleSheet.create({
         flex: 1
     },
     segmentTitle: {
-        fontSize: 20
+        fontSize: 20,
+        fontFamily: "Arimo"
     },
     foot: {
         flexDirection: "row",
@@ -156,11 +157,13 @@ const styles = StyleSheet.create({
     },
     date: {
         fontSize: 12,
-        color: "#5f5f5f"
+        color: "#5f5f5f",
+        fontFamily: "Arimo"
     },
     status: {
         fontSize: 12,
-        color: "#5f5f5f"
+        color: "#5f5f5f",
+        fontFamily: "Arimo"
     },
     segmentPlus: {
         position: "absolute",
