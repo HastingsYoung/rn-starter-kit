@@ -30,19 +30,25 @@ export default class NoteView extends Component {
 
         return <View style={styles.container} tabLabel={this.props.tabLabel}>
             <ScrollView contentContainerStyle={styles.list} showsVerticalScrollIndicator={true} scrollEnabled={true}>
-                <Segment title={"XXXXXXX"} chose={"X"} answer={"X"}></Segment>
-                <Segment title={"XXXXXXX"} chose={"X"} answer={"X"}></Segment>
-                <Segment title={"XXXXXXX"} chose={"X"} answer={"X"}></Segment>
-                <Segment title={"XXXXXXX"} chose={"X"} answer={"X"}></Segment>
-                <Segment title={"XXXXXXX"} chose={"X"} answer={"X"}></Segment>
-                <Segment title={"XXXXXXX"} chose={"X"} answer={"X"}></Segment>
-                <Segment title={"XXXXXXX"} chose={"X"} answer={"X"}></Segment>
-                <Segment title={"XXXXXXX"} chose={"X"} answer={"X"}></Segment>
-                <Segment title={"XXXXXXX"} chose={"X"} answer={"X"}></Segment>
-                <Segment title={"XXXXXXX"} chose={"X"} answer={"X"}></Segment>
-                <Segment title={"XXXXXXX"} chose={"X"} answer={"X"}></Segment>
-                <Segment title={"XXXXXXX"} chose={"X"} answer={"X"}></Segment>
-                <Segment title={"XXXXXXX"} chose={"X"} answer={"X"}></Segment>
+                <Segment title={"XXXXXXX"} date={new Date().toDateString()} status={"Correct"}></Segment>
+                <View style={styles.divider}></View>
+                <Segment title={"XXXXXXX"} date={new Date().toDateString()} status={"Review"}></Segment>
+                <View style={styles.divider}></View>
+                <Segment title={"XXXXXXX"} date={new Date().toDateString()} status={"Review"}></Segment>
+                <View style={styles.divider}></View>
+                <Segment title={"XXXXXXX"} date={new Date().toDateString()} status={"Correct"}></Segment>
+                <View style={styles.divider}></View>
+                <Segment title={"XXXXXXX"} date={new Date().toDateString()} status={"Correct"}></Segment>
+                <View style={styles.divider}></View>
+                <Segment title={"XXXXXXX"} date={new Date().toDateString()} status={"Correct"}></Segment>
+                <View style={styles.divider}></View>
+                <Segment title={"XXXXXXX"} date={new Date().toDateString()} status={"Review"}></Segment>
+                <View style={styles.divider}></View>
+                <Segment title={"XXXXXXX"} date={new Date().toDateString()} status={"Correct"}></Segment>
+                <View style={styles.divider}></View>
+                <Segment title={"XXXXXXX"} date={new Date().toDateString()} status={"Correct"}></Segment>
+                <View style={styles.divider}></View>
+                <Segment title={"XXXXXXX"} date={new Date().toDateString()} status={"Correct"}></Segment>
             </ScrollView>
         </View>;
     }
@@ -55,16 +61,22 @@ class Segment extends Component {
 
     static propTypes = {
         title: PropTypes.string,
-        chose: PropTypes.string,
-        answer: PropTypes.string
+        date: PropTypes.string,
+        status: PropTypes.string
     }
 
     render() {
         return <View style={styles.segment}>
-            <View><Text style={styles.segmentTitle}>Title: {this.props.title}</Text></View>
-            <View>
-                <Text style={styles.segmentChose}>You chose: {this.props.chose}</Text>
-                <Text style={styles.segmentAnswer}>Answer: {this.props.answer}</Text>
+            <View style={styles.leftIcon}>
+                <Icon name={"description"} size={35} color={"#ffffff"}></Icon>
+            </View>
+            <View style={styles.segmentContent}>
+                <View style={styles.segmentTitleWrapper}><Text
+                    style={styles.segmentTitle}>{this.props.title}</Text></View>
+                <View style={styles.foot}>
+                    <Text style={styles.status}>{this.props.status}</Text>
+                    <Text style={styles.date}>{this.props.date}</Text>
+                </View>
             </View>
             <TouchableOpacity style={styles.segmentPlus}>
                 <Icon name={"add"} size={25} color={"#000000"}></Icon>
@@ -78,7 +90,34 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: 'center',
         alignItems: 'center',
-        height: height - APP_PADDING_TOP - height / 20 * 3
+        height: height - APP_PADDING_TOP - height / 20 * 3,
+        backgroundColor: "#fff" // make sure no white line in lines
+    },
+    divider: {
+        height: 1,
+        width: "70%",
+        marginLeft: 50,
+        backgroundColor: "#000"
+    },
+    segment: {
+        flexDirection: "row",
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: "100%",
+        backgroundColor: "#ffffff",
+        paddingVertical: 5,
+        maxHeight: 100
+    },
+    leftIcon: {
+        flexDirection: "row",
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 50,
+        backgroundColor: "#2f2f2f",
+        padding: 8,
+        marginLeft: 10,
+        height: 50,
+        width: 50
     },
     list: {
         // do not set flex here, otherwise will not scroll
@@ -87,26 +126,41 @@ const styles = StyleSheet.create({
         justifyContent: "flex-start",
         width: width,
     },
-    segment: {
+    segmentContent: {
         flexDirection: "column",
-        justifyContent: 'center',
+        justifyContent: 'space-between',
         alignItems: 'center',
-        width: "80%",
-        borderRadius: 5,
-        borderColor: "#c5cae9",
-        borderWidth: 2,
-        marginVertical: 10,
-        backgroundColor: "#efefef",
-        paddingVertical: 15
+        paddingTop: 5,
+        height: "100%",
+        flex: 7,
+        paddingHorizontal: 10
+    },
+    segmentTitleWrapper: {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        width: "100%",
+        flex: 1
     },
     segmentTitle: {
-        fontSize: 15
+        fontSize: 20
     },
-    segmentChose: {
-        fontSize: 15
+    foot: {
+        flexDirection: "row",
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        flex: 1,
+        height: 30,
+        width: "100%"
     },
-    segmentAnswer: {
-        fontSize: 15
+    date: {
+        fontSize: 12,
+        color: "#5f5f5f"
+    },
+    status: {
+        fontSize: 12,
+        color: "#5f5f5f"
     },
     segmentPlus: {
         position: "absolute",

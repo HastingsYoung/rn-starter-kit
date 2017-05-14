@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
         justifyContent: "flex-start",
         overflow: "hidden",
         paddingHorizontal: 10,
-        backgroundColor: "#ffffff"
+        backgroundColor: "#536dfe"
     },
     tab: {
         flexDirection: "column",
@@ -90,9 +90,10 @@ const styles = StyleSheet.create({
         marginHorizontal: 5,
         padding: 5,
         borderBottomWidth: 3,
-        borderColor: "#7986cb"
+        borderColor: "#fff"
     },
     tabText: {
-        fontFamily: "Architects Daughter"
+        fontFamily: "Architects Daughter",
+        color: "#fff"
     }
 });
